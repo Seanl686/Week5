@@ -3,11 +3,7 @@ import React from "react";
 
 // ReactDOM provides DOM-specific methods for rendering React components
 import ReactDOM from "react-dom/client";
-
-// React Router components for client-side routing:
-// createBrowserRouter: Creates a router instance with browser history
-// RouterProvider: Component that provides routing context to the app
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, BrowserRouter, Routes, Route } from "react-router";
 
 // Import the HomePage component that will be rendered at the root route
 import { HomePage } from './pages/home';
