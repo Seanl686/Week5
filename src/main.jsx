@@ -3,7 +3,7 @@ import React from "react";
 
 // ReactDOM provides DOM-specific methods for rendering React components
 import ReactDOM from "react-dom/client";
-import { RouterProvider, createBrowserRouter, Routes, Route } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the HomePage component that will be rendered at the root route
 import { HomePage } from './pages/home';
@@ -13,11 +13,11 @@ import { ProfilePage } from './pages/profile';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <App />,  // Change parent element to App
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "",
+        index: true,   // Use index for home page
         element: <HomePage />
       },
       {
