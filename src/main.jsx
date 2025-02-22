@@ -8,7 +8,7 @@ import ReactDOM from "react-dom/client";
 // - BrowserRouter: Enables client-side routing
 // - Routes: Container for multiple Route components
 // - Route: Defines a route mapping between URL paths and components
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route, createBrowserRouter } from "react-router";
 
 // Import page components
 // App: The main application component (root component)
@@ -19,6 +19,8 @@ import { HomePage } from './pages/home';
 // Get reference to the DOM element with id="root"
 // This is where our React application will be mounted
 const root = document.getElementById("root");
+
+const router = createBrowserRouter ([])
 
 // Create a React root using the DOM element and render the application
 ReactDOM.createRoot(root).render(
