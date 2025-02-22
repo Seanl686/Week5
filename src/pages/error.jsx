@@ -6,7 +6,7 @@ export const ErrorPage = () => {
         backgroundColor: 'purple',
         color: 'white',
         padding: '10px 20px',
-        textDecoration: 'none',
+        textDecoration: 'underline',
         display: 'inline-block',
         border: 'none',
         cursor: 'pointer',
