@@ -1,36 +1,47 @@
-// Import React library - required for JSX syntax and React functionality
+// React is the core library for building UI components
 import React from "react";
 
-// Import ReactDOM - provides methods to render React components in the browser
+// ReactDOM provides DOM-specific methods for rendering React components
 import ReactDOM from "react-dom/client";
 
-// Import routing components from react-router:
-// - BrowserRouter: Enables client-side routing
-// - Routes: Container for multiple Route components
-// - Route: Defines a route mapping between URL paths and components
-import { BrowserRouter, Routes, Route, createBrowserRouter, RouterProvider } from "react-router";
+// React Router components for client-side routing:
+// createBrowserRouter: Creates a router instance with browser history
+// RouterProvider: Component that provides routing context to the app
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-// Import page components
-// App: The main application component (root component)
-import App from "./app";
-// HomePage: The component to be displayed at the root URL path
+// Import the HomePage component that will be rendered at the root route
 import { HomePage } from './pages/home';
 
-// Get reference to the DOM element with id="root"
-// This is where our React application will be mounted
+// Create an error boundary component
+const ErrorPage = () => {
+  return (
+    <div>
+      <h1>Oops!</h1>
+      <p>Sorry, an unexpected error has occurred.</p>
+    </div>
+  );
+};
+
+// Select the root DOM node where the React app will be mounted
 const root = document.getElementById("root");
 
+// Configure the router with an array of route definitions
+// Each route object specifies a path and the component to render
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <HomePage />,
+    path: "/", // Root path of the application
+    element: <HomePage />, // Component to render at this path
+    errorElement: <ErrorPage />,
+    // Add basename if your app is not served from root
+    // basename: "/your-app-base",
   }
-])
+]);
 
-// Create a React root using the DOM element and render the application
+// Initialize the React application:
+// 1. Create a root instance
+// 2. Render the app wrapped in StrictMode and RouterProvider
 ReactDOM.createRoot(root).render(
-  // BrowserRouter wraps the app to enable client-side routing
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode> // StrictMode is a tool for highlighting potential problems in an application
+  <React.StrictMode> 
+    <RouterProvider router={router} /> 
+  </React.StrictMode>
 );
