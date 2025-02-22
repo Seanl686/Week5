@@ -3,48 +3,33 @@ import React from "react";
 
 // ReactDOM provides DOM-specific methods for rendering React components
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, BrowserRouter, Routes, Route } from "react-router";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the HomePage component that will be rendered at the root route
 import { HomePage } from './pages/home';
+import { ErrorPage } from './pages/error';
+import { ProfilePage } from './pages/profile';
 
-// Create an error boundary component
-const ErrorPage = () => {
-  return (
-    <div>
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-    </div>
-  );
-};
-
-// Select the root DOM node where the React app will be mounted
-const root = document.getElementById("root");
-
-// Configure the router with an array of route definitions
-// Each route object specifies a path and the component to render
 const router = createBrowserRouter([
   {
-    path: "/", // Root path of the application
-    element: <HomePage />, // Component to render at this path
+    path: "/",
+    element: <App />,
     errorElement: <ErrorPage />,
-  },
-  { path: "/profile/:id", 
-    element: <ProfilePage />
-
-  }
-  ,
-  {
-    path: "/error", // Explicit error route
-    element: <ErrorPage />, // Renders the error page component
+    children: [
+      {
+        path: "/",
+        element: <HomePage />
+      },
+      {
+        path: "/profile/:id",
+        element: <ProfilePage />
+      }
+    ]
   }
 ]);
 
-// Initialize the React application:
-// 1. Create a root instance
-// 2. Render the app wrapped in StrictMode and RouterProvider
-ReactDOM.createRoot(root).render(
-  <React.StrictMode> 
-    <RouterProvider router={router} /> 
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
