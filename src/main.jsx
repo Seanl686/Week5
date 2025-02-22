@@ -30,11 +30,7 @@ const router = createBrowserRouter([
 // Create a React root using the DOM element and render the application
 ReactDOM.createRoot(root).render(
   // BrowserRouter wraps the app to enable client-side routing
-  <BrowserRouter>
-    {/* Routes component groups all route definitions */}
-    <Routes>
-      {/* Route defines the mapping of path "/" to HomePage component */}
-      <Route path="/" element={<HomePage />} />
-    </Routes>
-  </BrowserRouter>
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode> // StrictMode is a tool for highlighting potential problems in an application
 );
