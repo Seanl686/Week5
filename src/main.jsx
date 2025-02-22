@@ -13,12 +13,16 @@ import { ProfilePage } from './pages/profile';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,  // Change parent element to App
+    element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
-        index: true,   // Use index for home page
+        index: true,
         element: <HomePage />
+      },
+      {
+        path: "profile",
+        element: <ProfilePage />
       },
       {
         path: "profile/:id",
