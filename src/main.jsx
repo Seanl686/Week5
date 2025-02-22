@@ -33,6 +33,11 @@ const router = createBrowserRouter([
     element: <HomePage />, // Component to render at this path
     errorElement: <ErrorPage />,
   },
+  { path: "/profile/:id", 
+    element: <ProfilePage />
+
+  }
+  ,
   {
     path: "/error", // Explicit error route
     element: <ErrorPage />, // Renders the error page component
