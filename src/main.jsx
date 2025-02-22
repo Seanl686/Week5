@@ -32,8 +32,10 @@ const router = createBrowserRouter([
     path: "/", // Root path of the application
     element: <HomePage />, // Component to render at this path
     errorElement: <ErrorPage />,
-    // Add basename if your app is not served from root
-    // basename: "/your-app-base",
+  },
+  {
+    path: "/error", // Explicit error route
+    element: <ErrorPage />, // Renders the error page component
   }
 ]);
 
