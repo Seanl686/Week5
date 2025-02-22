@@ -1,0 +1,15 @@
+.error-button {
+    background-color: purple;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    border: 7px solid transparent;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: border-color 0.3s ease;
+}
+
+.error-button:hover {
+    border-color: #e6d4e6; /* light purple color */
+}
