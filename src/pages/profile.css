@@ -13,3 +13,20 @@
 .profile-button:hover {
     border-color: #e6d4e6;
 }
+
+.profile-link {
+    margin: 0 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: purple;
+}
+
+.profile-link.active {
+    background-color: purple;
+    color: white;
+    border-radius: 4px;
+}
+
+nav {
+    margin: 20px 0;
+}
