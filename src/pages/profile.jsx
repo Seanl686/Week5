@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link, NavLink } from 'react-router-dom';
+import { useParams, Link, NavLink, Outlet } from 'react-router-dom';
 import './profile.css';
 
 const userProfiles = [
@@ -31,6 +31,7 @@ export const ProfilePage = () => {
           </NavLink>
         ))}
       </nav>
+
 
       <Link to="/" className="profile-button">Return to Home</Link>
     </div>
