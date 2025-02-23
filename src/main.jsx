@@ -1,11 +1,9 @@
-// React is the core library for building UI components
 import React from "react";
-
-// ReactDOM provides DOM-specific methods for rendering React components
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-// Import the HomePage component that will be rendered at the root route
+// Pages
+import App from "./app";
 import { HomePage } from './pages/home';
 import { ErrorPage } from './pages/error';
 import { ProfilePage } from './pages/profile';

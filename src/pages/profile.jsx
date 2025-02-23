@@ -13,12 +13,3 @@ export const ProfilePage = () => {
     </div>
   );
 };
-  const { id } = useParams(); // Get the profile ID from URL parameters
-  
-  return (
-    <main className="profile-container">
-      <h1>Profile Page</h1>
-      <p>Viewing Profile ID: {id}</p>
-    </main>
-  );
-};
